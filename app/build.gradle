@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+// To enable auto parcel
+androidExtensions {
+    experimental = true
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.dev.mahmoud_ashraf.marvelapp"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // vector
+        vectorDrawables.useSupportLibrary true
+    }
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    // Android Arch Room
+    implementation 'androidx.room:room-runtime:2.1.0'
+    implementation 'androidx.room:room-rxjava2:2.1.0'
+    // OkHttp and Retrofit
+    implementation "com.squareup.okhttp3:okhttp:3.4.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.4.1"
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.11.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+
+
+    // Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // RxJava, RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+
+
+    //Dagger
+    implementation 'com.google.dagger:dagger:2.22.1'
+    implementation 'com.google.dagger:dagger-android:2.16'
+    implementation 'com.google.dagger:dagger-android-support:2.16'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt 'com.google.dagger:dagger-android-processor:2.16'
+    kapt 'com.google.dagger:dagger-compiler:2.21'
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    // paging
+    implementation "android.arch.paging:runtime:1.0.1"
+
+    // Test
+    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Glide
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+
+    kapt "androidx.lifecycle:lifecycle-compiler:2.0.0"
+    kapt 'androidx.room:room-compiler:2.1.0'
+
+    // vm
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+}

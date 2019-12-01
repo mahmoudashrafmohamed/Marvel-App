@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Marvel App</string>
+    <string name="need_internet">Need Internet to work!</string>
+    <string name="something_wrong">Something wrong happened, try again!</string>
+    <string name="data_finished">data is finished!</string>
+    <string name="comics">Comics</string>
+    <string name="series">Series</string>
+    <string name="stories">Stories</string>
+    <string name="events">Events</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
